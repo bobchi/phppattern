@@ -1,18 +1,10 @@
 <?php
-class Books implements IProduct{
+class Books extends ProLoadTemplate implements IProduct{
+    
     function getChild($params){
-        return new class($params[0]){
-            function __construct()
-            {
-                $arr = ['prod_id'=>104,'prod_name'=>'教科书'];
-                foreach ($arr as $k=>$v)
-                {
-                    $this->$k = $v;
-                }
-            }
-        };
-
+        parent::loadData($params[0],'Books');
     }
+
     function getList(){
         return [
             ['prod_id'=>101,'prod_name'=>'红皮书'],
@@ -20,5 +12,15 @@ class Books implements IProduct{
             ['prod_id'=>103,'prod_name'=>'小黄书'],
             ['prod_id'=>104,'prod_name'=>'教科书'],
         ];
+    }
+
+    function setClick()
+    {
+        // TODO: Implement setClick() method.
+    }
+
+    function setLog()
+    {
+        // TODO: Implement setLog() method.
     }
 }
