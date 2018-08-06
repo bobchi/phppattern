@@ -1,8 +1,8 @@
 <?php
 class Books extends ProLoadTemplate implements IProduct{
-    
+
     function getChild($params){
-        parent::loadData($params[0],'Books');
+        return parent::loadData($params[0],'Books');
     }
 
     function getList(){
@@ -14,13 +14,15 @@ class Books extends ProLoadTemplate implements IProduct{
         ];
     }
 
-    function setClick()
+    function setClick($id)
     {
         // TODO: Implement setClick() method.
+        echo '图书点击量<hr>';
     }
 
-    function setLog()
+    function setLog($id)
     {
         // TODO: Implement setLog() method.
+        echo '图书日志<hr>';
     }
 }

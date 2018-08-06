@@ -20,7 +20,8 @@ class ProductDataCenter
         foreach (self::$objList as $k=>$v)
         {
             if(method_exists($v, $name)){
-                $v->$name($arguments) && $ret[] = $v->$name($arguments);
+                $res = $v->$name($arguments);
+                $res && $ret[] = $res;
             }
         }
         return $ret;
