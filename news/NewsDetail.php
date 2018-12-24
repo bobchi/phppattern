@@ -30,13 +30,13 @@ class NewsDetail implements INews
                 return $news;
         }
     }
+
     function display()
     {
         $get_news=$this->getNews();
         //下面的代码 是模拟假设加载了模板，根据数据输出内容
         echo "<h2>".$get_news["news_title"]."</h2>";
         echo "<div>".$get_news["news_content"]."</div>";
-
 
         //执行插件方法
         foreach($this->plugs as $plugName=>$plugObject)
